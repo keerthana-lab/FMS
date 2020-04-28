@@ -1,0 +1,118 @@
+.form{
+    width: 360px;
+    padding: 0 0 0;
+    margin: auto
+}
+
+.form input {
+    font-family: sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'billabongregular';
+    src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot");
+    src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+   }
+
+   
+   .button-container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .login-button, .button {
+    border: 2px solid #f2f2f2;
+    width : 40%;
+    margin : auto;
+    background: none;
+    flex-basis: 48%;
+    display: inline-block;
+    line-height: 2;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    /* color: red; */
+    transition: all 0.2s;
+    box-sizing: padding-box;
+    
+   }
+   button:hover,.button:hover, button:focus, .button:focus {
+    border-color: #00f;
+    outline: 0;
+   }
+
+   .form button:hover,.form button:active,.form button:focus {
+    background: rgb(200, 230, 241);
+   }
+
+    .title {
+    font-family: billabong, 'billabongregular';
+    text-align: center;
+    font-weight: 100;
+    font-size: 6rem;
+    margin: 2rem 0;
+    letter-spacing: -1px;
+    color: black;
+    text-decoration: none;
+   }
+   
+   /* .box {
+       border : 1px solid black;
+   } */
+   
+   .bg-blue {
+       background-color: darkcyan;
+}
+
+.bg-grey {
+    background-color: lightgrey;
+}
+
+.bg-red {
+    background-color: orangered;
+}
+
+.bg-orange{
+    background-color: orange;
+}
+
+.bg-violet{
+    background-color: darkorchid;
+}
+
+.bg-d-grey{
+    background-color: grey;
+}
+
+
+table{
+    border: 1p solid black;
+    padding: 50px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ 
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }

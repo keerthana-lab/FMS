@@ -1,0 +1,198 @@
+swagger: '2.0'
+
+# Document metaData
+
+info:
+  version : "1.0.0"
+  title: Event
+# URL Data  
+host: localhost
+basePath: /event
+tags: 
+ - name: EVENTS
+schemes: 
+  - http
+# End Points
+paths:
+  # get Authentication
+  /eventId/{eventId}:
+    get:
+      tags:
+       - Dashboard
+      description: get event by id
+   
+      
+      produces:
+        - application/json
+      parameters:
+        - name: eventId
+          in: path 
+          required: true
+          type: string
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/Event'
+              
+          404:
+            description: No DataFound 
+            
+  /all:
+    get:
+      tags:
+       - Dashboard
+      description: get all Events
+   
+      
+      produces:
+        - application/json
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/Event'
+              
+          404:
+            description: No DataFound 
+  
+  
+  /summaryId/{summaryId}:
+    get:
+      tags:
+       - Dashboard
+      description: get summary by id
+   
+      
+      produces:
+        - application/json
+      parameters:
+        - name: summaryId
+          in: path 
+          required: true
+          type: integer
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/Summary'
+              
+          404:
+            description: No DataFound 
+            
+  /summary/all:
+    get:
+      tags:
+       - Dashboard
+      description: get all Summary
+   
+      
+      produces:
+        - application/json
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/Summary'
+              
+          404:
+            description: No DataFound            
+          
+            
+definitions:
+
+    
+    Event:
+      type: object
+      properties:
+        eventId:
+          type: string
+        baseLocation:
+          type: string
+        beneficiaryName:
+          type: string
+        councilName:
+          type: string
+        eventName:
+          type: string
+        eventDescription:
+          type: string
+        eventDate:
+          type: string
+          format: date
+        empId:
+          type: number
+        empName:
+          type: string
+        volunteerHours:
+          type: integer
+        travelHours:
+          type: integer
+        livesImpacted:
+          type: integer
+        businessUnit:
+          type: string
+        status:
+          type: string
+        iiepCategory:
+          type: string
+        summaryId:
+          type: integer
+          
+    
+    Summary:
+      type: object
+      properties:
+        summaryId:
+          type: integer
+        eventId:
+          type: string
+        month:
+          type: string
+        baseLocation:
+          type: string
+        beneficiaryName:
+          type: string
+        venueAddress:
+          type: string
+        councilName:
+          type: string
+        project:
+          type: string
+        category:
+          type: string
+        eventName:
+          type: string
+        eventDescription:
+          type: string
+        eventDate:
+          type: string
+          format: date
+        totalVolunteers:
+          type: integer
+        totalVolunteerHours:
+          type: integer
+        totalTravelHours:
+          type: integer
+        overallHours:
+          type: integer
+        livesImpacted:
+          type: integer
+        activityType:
+          type: string
+        status:
+          type: string
+        pocId:
+          type: number
+        pocName:
+          type: string
+        pocContact:
+          type: number

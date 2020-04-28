@@ -1,0 +1,132 @@
+swagger: '2.0'
+
+# Document metaData
+
+info:
+  version : "1.0.0"
+  title: Feedback
+# URL Data  
+host: localhost
+basePath: /feedback
+tags: 
+ - name: Feedback
+schemes: 
+  - http
+# End Points
+paths:
+  # get Authentication
+  /question/{quesId}:
+    get:
+      tags:
+       - Dashboard
+      description: get question by id
+   
+      
+      produces:
+        - application/json
+      parameters:
+        - name: quesId
+          in: path 
+          required: true
+          type: integer
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/feedBackQuestions'
+              
+          404:
+            description: No DataFound 
+            
+  /question/all:
+    get:
+      tags:
+       - Dashboard
+      description: get all questions
+   
+      
+      produces:
+        - application/json
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/feedBackQuestions'
+              
+          404:
+            description: No DataFound 
+  
+  
+  /answer/{id}:
+    get:
+      tags:
+       - Dashboard
+      description: get answer by id
+   
+      
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path 
+          required: true
+          type: integer
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/feedBackQuestions'
+              
+          404:
+            description: No DataFound 
+            
+  /answer/all:
+    get:
+      tags:
+       - Dashboard
+      description: get all answers
+   
+      
+      produces:
+        - application/json
+
+           
+      responses: 
+          200:
+            description : fetch
+            schema:
+              $ref: '#/definitions/feedBackAnswers'
+              
+          404:
+            description: No DataFound            
+          
+            
+definitions:
+
+    
+    feedBackQuestions:
+      type: object
+      properties:
+        quesId:
+          type: integer
+        question:
+          type: string
+          
+    
+    feedBackAnswers:
+      type: object
+      properties:
+        ansId:
+          type: integer
+        quesId:
+          type: integer
+        answer:
+          type: string
+        userId:
+          type: integer

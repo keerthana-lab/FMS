@@ -1,0 +1,56 @@
+swagger: '2.0'
+
+# Document metaData
+
+info:
+  version : "1.0.0"
+  title: login-app
+# URL Data  
+host: localhost
+basePath: /login
+tags: 
+ - name: LOGIN
+schemes: 
+  - http
+# End Points
+paths:
+  # get Authentication
+  /login:
+    post:
+      tags:
+       - login user
+      description: get user by id
+   
+      
+      produces:
+        - application/json
+      parameters:
+        - name: authHeader
+          in: header 
+          type: string
+           
+      responses: 
+          200:
+            description : user logged in
+            schema:
+              $ref: '#/definitions/User'
+              
+          404:
+            description: No DataFound 
+            
+
+definitions:
+
+    
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        roleId:
+          type: integer
+    
